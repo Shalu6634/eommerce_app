@@ -1,7 +1,5 @@
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-
 import 'List.dart';
 
 class HomePage extends StatefulWidget {
@@ -109,7 +107,10 @@ class _HomePageState extends State<HomePage> {
                 Column(
                   children: List.generate(
                     productList.length,
-                    (index) => box1(img: productList[index]['img']),
+                    (index) => box1(
+                      img: productList[index]['img'],
+                      img1:proList[index]['img1'],
+                    ),
                   ),
                 ),
               ],
@@ -120,35 +121,72 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Row box1({required String img}) {
+  Row box1({required String img,required String img1}) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        Container(
-          height: 200,
-          width: 195,
-          margin: EdgeInsets.all(10),
-          decoration: BoxDecoration(
-              boxShadow: [
-                BoxShadow(color: Colors.black, spreadRadius: 2, blurRadius: 2)
-              ],
-              color: Colors.white12,
-              image: DecorationImage(
-                fit: BoxFit.cover
-              ,image: AssetImage(img),),),
-        ),
-        Container(
-          height: 200,
-          width: 195,
-          decoration: BoxDecoration(
-            boxShadow: [
-              BoxShadow(color: Colors.black, spreadRadius: 2, blurRadius: 2)
-            ],
-            color: Colors.white12,
-            image: DecorationImage(
-              fit: BoxFit.cover,
-              image: AssetImage(img),
+        Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(bottom: 20),
+              child: Container(
+                height: 250,
+                width: 195,
+                margin: EdgeInsets.all(5),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                    boxShadow: [
+                      BoxShadow(color: Colors.black, spreadRadius: 1, blurRadius: 2)
+                    ],
+                    color: Colors.white12,
+
+                    image: DecorationImage(
+                      fit: BoxFit.cover
+                    ,image: AssetImage(img),),),
+                child:  Container(
+                  alignment: Alignment.center,
+                  height: 30,
+                  width: 100,
+                  margin: EdgeInsets.only(top: 140),
+                  color: Colors.black54,
+              ),
             ),
-          ),
+            ),
+
+          ],
+        ),
+        Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(left: 2,bottom: 20),
+              child: Container(
+                height: 250,
+                width: 190,
+                margin: EdgeInsets.all(5),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  boxShadow: [
+                    BoxShadow(color: Colors.black, spreadRadius: 1, blurRadius: 2)
+                  ],
+                  color: Colors.white12,
+                  image: DecorationImage(
+                    fit: BoxFit.cover,
+                    image: AssetImage(img1),
+                  ),
+                ),
+                child:  Container(
+                  alignment: Alignment.center,
+                  height: 30,
+                  width: 100,
+                  margin: EdgeInsets.only(top: 140),
+                  color: Colors.black54,
+                ),
+              ),
+
+            ),
+
+          ],
         ),
       ],
     );

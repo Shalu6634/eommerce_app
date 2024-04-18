@@ -66,6 +66,11 @@ flutter:
     - assets/img/G.png
     - assets/img/pro.jpg
     - assets/img/pro2.jpg
+    - assets/img/pro3.jpg
+    - assets/img/pro4.jpg
+    - assets/img/pro5.jpeg
+
+
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
