@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'List.dart';
 
@@ -104,14 +103,47 @@ class _HomePageState extends State<HomePage> {
                         fontWeight: FontWeight.bold),
                   ),
                 ),
-                Column(
-                  children: List.generate(
-                    productList.length,
-                    (index) => box1(
-                      img: productList[index]['img'],
-                      img1:proList[index]['img1'],
+                Row(
+                  children: [
+                    Column(
+                      children: List.generate(
+                        4,
+                        (index) => GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              Navigator.of(context).pushNamed('/detail',
+                                  arguments: productList[index]);
+                              selectedIndex = index;
+                            });
+                          },
+                          child: box1(
+                            img: productList[index]['img'],
+                            price: productList[index]['price'],
+                            name: productList[index]['name'],
+                          ),
+                        ),
+                      ),
                     ),
-                  ),
+                    Column(
+                      children: List.generate(
+                        4,
+                        (index) => GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              Navigator.of(context).pushNamed('/detail',
+                                  arguments: proList[index]);
+                              selectedIndex = index;
+                            });
+                          },
+                          child: box1(
+                            img: proList[index]['img'],
+                            price: proList[index]['price'],
+                            name: proList[index]['name'],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
@@ -121,73 +153,104 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Row box1({required String img,required String img1}) {
+  Row box1({required String img, required int price, required String name}) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         Column(
+
           children: [
             Padding(
               padding: const EdgeInsets.only(bottom: 20),
               child: Container(
-                height: 250,
+                height: 260,
                 width: 195,
                 margin: EdgeInsets.all(5),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
-                    boxShadow: [
-                      BoxShadow(color: Colors.black, spreadRadius: 1, blurRadius: 2)
-                    ],
-                    color: Colors.white12,
-
-                    image: DecorationImage(
-                      fit: BoxFit.cover
-                    ,image: AssetImage(img),),),
-                child:  Container(
-                  alignment: Alignment.center,
-                  height: 30,
-                  width: 100,
-                  margin: EdgeInsets.only(top: 140),
-                  color: Colors.black54,
-              ),
-            ),
-            ),
-
-          ],
-        ),
-        Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(left: 2,bottom: 20),
-              child: Container(
-                height: 250,
-                width: 190,
-                margin: EdgeInsets.all(5),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
                   boxShadow: [
-                    BoxShadow(color: Colors.black, spreadRadius: 1, blurRadius: 2)
+                    BoxShadow(
+                        color: Colors.black, spreadRadius: 1, blurRadius: 2)
                   ],
                   color: Colors.white12,
                   image: DecorationImage(
                     fit: BoxFit.cover,
-                    image: AssetImage(img1),
+                    image: AssetImage(img),
                   ),
                 ),
-                child:  Container(
-                  alignment: Alignment.center,
-                  height: 30,
-                  width: 100,
-                  margin: EdgeInsets.only(top: 140),
-                  color: Colors.black54,
+                child: Padding(
+                  padding:  EdgeInsets.only(right: 10,left: 10),
+                  child: Container(
+                    alignment: Alignment.center,
+                    height: 30,
+                    width: 60,
+                    margin: EdgeInsets.only(top: 150),
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.white12,),
+                      borderRadius: BorderRadius.circular(30),
+                      color: Colors.black54,
+                    ),
+                    child: Padding(
+                      padding:  EdgeInsets.only(top: 30,bottom: 10),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                            Text(
+                              name,
+                              style: TextStyle(fontSize: 20, color: Colors.white),
+                            ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                '${price}' + '/-',
+                                style: TextStyle(fontSize: 20, color: Colors.white),
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
                 ),
               ),
-
             ),
-
           ],
         ),
+        // Column(
+        //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        //   children: [
+        //     Padding(
+        //       padding: const EdgeInsets.only(left: 2, bottom: 20),
+        //       child: Container(
+        //         height: 250,
+        //         width: 190,
+        //         margin: EdgeInsets.all(5),
+        //         decoration: BoxDecoration(
+        //           borderRadius: BorderRadius.circular(20),
+        //           boxShadow: [
+        //             BoxShadow(
+        //                 color: Colors.black, spreadRadius: 1, blurRadius: 2)
+        //           ],
+        //           color: Colors.white12,
+        //           image: DecorationImage(
+        //             fit: BoxFit.cover,
+        //             image: AssetImage(img),
+        //           ),
+        //         ),
+        //         child: Container(
+        //           alignment: Alignment.center,
+        //           height: 20,
+        //           width: 70,
+        //           margin: EdgeInsets.only(top: 140),
+        //           decoration: BoxDecoration(
+        //               color: Colors.black54,
+        //               borderRadius: BorderRadius.circular(23)),
+        //         ),
+        //       ),
+        //     ),
+        //   ],
+        // ),
       ],
     );
   }

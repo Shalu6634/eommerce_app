@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'Home/detailsScreen.dart';
 import 'Home/homePage.dart';
 import 'Home/splashscreen.dart';
 void main()
@@ -15,7 +16,10 @@ class EcommerceApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routes: {
         '/' :(context) =>   HomePage(),
-        '/home':(context)=>Splashscreen(),
+        '/home':(context)=>HomePage(),
+        '/detail':(context)=>DetailsScreen(),
+        '/splash':(context)=> Splashscreen(),
+
 
       },
     );
