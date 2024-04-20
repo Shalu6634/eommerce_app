@@ -24,10 +24,10 @@ class _HomePageState extends State<HomePage> {
           title: const Padding(
             padding: EdgeInsets.only(top: 8),
             child: Text(
-              'Stylish \n Furniture',
+              ' Enjoy Stylish\n Furniture',
               style: TextStyle(
                   color: Colors.purpleAccent,
-                  fontSize: 25,
+                  fontSize: 23,
                   fontWeight: FontWeight.bold,
                   letterSpacing: 1),
             ),
@@ -94,20 +94,20 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
                 const Padding(
-                  padding: EdgeInsets.only(right: 155, top: 30),
+                  padding: EdgeInsets.only(right: 185, top: 30),
                   child: Text(
                     'Stylish Furniture ',
                     style: TextStyle(
-                        fontSize: 30,
+                        fontSize: 25,
                         color: Colors.black,
-                        fontWeight: FontWeight.bold),
+                        fontWeight: FontWeight.bold,letterSpacing: 1),
                   ),
                 ),
                 Row(
                   children: [
                     Column(
                       children: List.generate(
-                        4,
+                        productList.length,
                         (index) => GestureDetector(
                           onTap: () {
                             setState(() {
@@ -126,7 +126,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                     Column(
                       children: List.generate(
-                        4,
+                        proList.length,
                         (index) => GestureDetector(
                           onTap: () {
                             setState(() {
@@ -158,17 +158,17 @@ class _HomePageState extends State<HomePage> {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         Column(
-
           children: [
             Padding(
               padding: const EdgeInsets.only(bottom: 20),
               child: Container(
+
                 height: 260,
                 width: 195,
                 margin: EdgeInsets.all(5),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
-                  boxShadow: [
+                  boxShadow:const  [
                     BoxShadow(
                         color: Colors.black, spreadRadius: 1, blurRadius: 2)
                   ],
@@ -197,14 +197,14 @@ class _HomePageState extends State<HomePage> {
                         children: [
                             Text(
                               name,
-                              style: TextStyle(fontSize: 20, color: Colors.white),
+                              style: TextStyle(fontSize: 20, color: Colors.tealAccent),
                             ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
                                 '${price}' + '/-',
-                                style: TextStyle(fontSize: 20, color: Colors.white),
+                                style: TextStyle(fontSize: 20, color: Colors.cyanAccent),
                               ),
                             ],
                           )
@@ -212,45 +212,12 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                   ),
+
                 ),
               ),
             ),
           ],
         ),
-        // Column(
-        //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        //   children: [
-        //     Padding(
-        //       padding: const EdgeInsets.only(left: 2, bottom: 20),
-        //       child: Container(
-        //         height: 250,
-        //         width: 190,
-        //         margin: EdgeInsets.all(5),
-        //         decoration: BoxDecoration(
-        //           borderRadius: BorderRadius.circular(20),
-        //           boxShadow: [
-        //             BoxShadow(
-        //                 color: Colors.black, spreadRadius: 1, blurRadius: 2)
-        //           ],
-        //           color: Colors.white12,
-        //           image: DecorationImage(
-        //             fit: BoxFit.cover,
-        //             image: AssetImage(img),
-        //           ),
-        //         ),
-        //         child: Container(
-        //           alignment: Alignment.center,
-        //           height: 20,
-        //           width: 70,
-        //           margin: EdgeInsets.only(top: 140),
-        //           decoration: BoxDecoration(
-        //               color: Colors.black54,
-        //               borderRadius: BorderRadius.circular(23)),
-        //         ),
-        //       ),
-        //     ),
-        //   ],
-        // ),
       ],
     );
   }
