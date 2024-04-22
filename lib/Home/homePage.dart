@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import '../utils/global_var.dart';
 import 'List.dart';
 
 class HomePage extends StatefulWidget {
@@ -14,11 +16,16 @@ class _HomePageState extends State<HomePage> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          actions: const [
+          actions:  [
             Padding(
               padding: const EdgeInsets.only(right: 10),
               child: Icon(Icons.notifications_active),
+
             ),
+            GestureDetector(onTap: (){
+              cartList.add;
+              Navigator.of(context).pushNamed('/cart');
+            },child: Icon(Icons.shopping_cart_outlined)),
           ],
           backgroundColor: Colors.white,
           title: const Padding(
@@ -26,7 +33,7 @@ class _HomePageState extends State<HomePage> {
             child: Text(
               ' Enjoy Stylish\n Furniture',
               style: TextStyle(
-                  color: Colors.purpleAccent,
+                  color: Colors.black,
                   fontSize: 23,
                   fontWeight: FontWeight.bold,
                   letterSpacing: 1),
@@ -93,7 +100,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ],
                 ),
-                const Padding(
+                 Padding(
                   padding: EdgeInsets.only(right: 185, top: 30),
                   child: Text(
                     'Stylish Furniture ',
@@ -113,7 +120,7 @@ class _HomePageState extends State<HomePage> {
                             setState(() {
                               Navigator.of(context).pushNamed('/detail',
                                   arguments: productList[index]);
-                              selectedIndex = index;
+                                  selectedIndex = index;
                             });
                           },
                           child: box1(
@@ -132,7 +139,7 @@ class _HomePageState extends State<HomePage> {
                             setState(() {
                               Navigator.of(context).pushNamed('/detail',
                                   arguments: proList[index]);
-                              selectedIndex = index;
+                                   selectedIndex = index;
                             });
                           },
                           child: box1(
@@ -162,7 +169,6 @@ class _HomePageState extends State<HomePage> {
             Padding(
               padding: const EdgeInsets.only(bottom: 20),
               child: Container(
-
                 height: 260,
                 width: 195,
                 margin: EdgeInsets.all(5),
@@ -190,27 +196,26 @@ class _HomePageState extends State<HomePage> {
                       borderRadius: BorderRadius.circular(30),
                       color: Colors.black54,
                     ),
-                    child: Padding(
-                      padding:  EdgeInsets.only(top: 30,bottom: 10),
+
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                             Text(
                               name,
-                              style: TextStyle(fontSize: 20, color: Colors.tealAccent),
+                              style: TextStyle(fontSize: 16, color: Colors.white),
                             ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
                                 '${price}' + '/-',
-                                style: TextStyle(fontSize: 20, color: Colors.cyanAccent),
+                                style: TextStyle(fontSize: 16, color: Colors.white),
                               ),
                             ],
                           )
                         ],
                       ),
-                    ),
+
                   ),
 
                 ),
