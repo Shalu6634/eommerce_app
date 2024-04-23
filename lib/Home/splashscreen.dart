@@ -12,9 +12,9 @@ class Splashscreen extends StatefulWidget {
 class _SplashscreenState extends State<Splashscreen> {
   @override
   Widget build(BuildContext context) {
-  Timer(Duration(seconds: 3),(){Navigator.pushReplacementNamed(context, '/home');});
+  Timer(Duration(seconds: 5),(){Navigator.pushReplacementNamed(context, '/home');});
     return Scaffold(
-      backgroundColor: Colors.blueGrey,
+      backgroundColor: Colors.purpleAccent,
       body: Align(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -26,7 +26,7 @@ class _SplashscreenState extends State<Splashscreen> {
                     height: 200,
                     width: 360,
                     decoration: const BoxDecoration(
-                      color: Colors.blueGrey,
+                      color: Colors.purpleAccent,
                       image: DecorationImage(
                         fit: BoxFit.fitHeight,
                         image: AssetImage('assets/img/G.png'),

@@ -14,6 +14,9 @@ class _CartScreenState extends State<CartScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.white,
+        shadowColor: Colors.black12,
+        elevation: 3,
         title: Text(
           'Cart List',
           style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
@@ -35,7 +38,7 @@ class _CartScreenState extends State<CartScreen> {
         onPressed: () {
          for(int i=0; i<cartList.length; i++)
          {
-             qty = (qty + cartList[i]['member'].toInt());
+             qty = (qty + cartList[i]['member']);
              amount=amount+cartList[i]['price']*cartList[i]['member'];
          }
          total=(amount*18/100)+amount;

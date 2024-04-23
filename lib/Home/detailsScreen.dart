@@ -250,7 +250,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(top: 360, left: 150),
+                      padding: const EdgeInsets.only(top: 360, left: 130),
                       child: Text(
                         '${data['price']}' + '/-',
                         style: TextStyle(

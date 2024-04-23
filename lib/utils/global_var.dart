@@ -1,6 +1,6 @@
 
 int count =0;
-int selectedIndex=1;
+int selectedIndex=0;
 
 double qty =0;
 double amount=0;
