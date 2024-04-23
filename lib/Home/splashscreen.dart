@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 class Splashscreen extends StatefulWidget {
@@ -10,8 +12,9 @@ class Splashscreen extends StatefulWidget {
 class _SplashscreenState extends State<Splashscreen> {
   @override
   Widget build(BuildContext context) {
+  Timer(Duration(seconds: 3),(){Navigator.pushReplacementNamed(context, '/home');});
     return Scaffold(
-      backgroundColor: Colors.purpleAccent,
+      backgroundColor: Colors.blueGrey,
       body: Align(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -23,7 +26,7 @@ class _SplashscreenState extends State<Splashscreen> {
                     height: 200,
                     width: 360,
                     decoration: const BoxDecoration(
-                      color: Colors.purpleAccent,
+                      color: Colors.blueGrey,
                       image: DecorationImage(
                         fit: BoxFit.fitHeight,
                         image: AssetImage('assets/img/G.png'),

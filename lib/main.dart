@@ -17,7 +17,7 @@ class EcommerceApp extends StatelessWidget {
     return  MaterialApp(
       debugShowCheckedModeBanner: false,
       routes: {
-        '/' :(context) =>HomePage() ,
+        '/' :(context) =>Splashscreen(),
         '/check':(context)=>CheckOutScreen(),
         '/home':(context)=>HomePage(),
         '/cart':(context)=>CartScreen(),

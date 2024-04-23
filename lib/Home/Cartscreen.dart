@@ -85,14 +85,16 @@ class _CartScreenState extends State<CartScreen> {
                                   fontWeight: FontWeight.bold,
                                   fontSize: 20),
                             ),
-                            GestureDetector(
+                            InkWell(
                                 onTap: () {
-                                  cartList.removeAt(selectedIndex);
+                                 setState(() {
+                                   cartList.removeAt(selectedIndex);
+                                 },);
                                 },
                                 child: Padding(
                                   padding: EdgeInsets.only(left: 20),
                                   child: Icon(Icons.delete),
-                                )),
+                                ),),
                           ],
                         ),
                         Text(
