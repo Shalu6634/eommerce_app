@@ -33,7 +33,7 @@ class _HomePageState extends State<HomePage> {
             child: Text(
               ' Enjoy Stylish\n Furniture',
               style: TextStyle(
-                  color: Colors.black,
+                  color: Colors.purpleAccent,
                   fontSize: 23,
                   fontWeight: FontWeight.bold,
                   letterSpacing: 1),

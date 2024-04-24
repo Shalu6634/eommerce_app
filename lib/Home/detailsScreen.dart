@@ -67,7 +67,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                       child: Icon(
                         Icons.favorite_border,
                         size: 35,
-                        color: Colors.white,
+                        color: Colors.purpleAccent,
                       ),
                     ),
                   ),
@@ -97,7 +97,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                         decoration: BoxDecoration(
                           boxShadow: [
                             BoxShadow(
-                                color: Colors.black54,
+                                color: Colors.purpleAccent,
                                 blurRadius: 3,
                                 spreadRadius: 1)
                           ],
@@ -152,7 +152,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                           Icon(
                             Icons.refresh,
                             size: 30,
-                            color: Colors.black,
+                            color: Colors.purpleAccent,
                           ),
                           Text(
                             '   14 Days \n  returnable',
@@ -186,7 +186,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                         Icon(
                           Icons.delivery_dining,
                           size: 30,
-                          color: Colors.black,
+                          color: Colors.purpleAccent,
                         ),
                         Text(
                           '   free \n Delivery',
@@ -220,7 +220,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                         Icon(
                           Icons.handshake,
                           size: 30,
-                          color: Colors.black,
+                          color: Colors.purpleAccent,
                         ),
                         Text(
                           '  Secure \n Transaction',

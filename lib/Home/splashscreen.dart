@@ -12,7 +12,7 @@ class Splashscreen extends StatefulWidget {
 class _SplashscreenState extends State<Splashscreen> {
   @override
   Widget build(BuildContext context) {
-  Timer(Duration(seconds: 5),(){Navigator.pushReplacementNamed(context, '/home');});
+  Timer(Duration(seconds: 3),(){Navigator.pushReplacementNamed(context, '/home');});
     return Scaffold(
       backgroundColor: Colors.purpleAccent,
       body: Align(
